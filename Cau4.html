@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biểu diễn hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+</body>
+<script>
+    class Rectangle {
+        x;
+        y;
+        width;
+        height;
+        color;
+
+        constructor(x, y, width, height, color) {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+            this.color = color;
+        }
+
+        getwidth() {
+            return this.width
+        }
+
+        getheight() {
+            return this.height
+        }
+
+        getx() {
+            return this.x;
+        }
+
+        gety() {
+            return this.y;
+        }
+
+        getcolor() {
+            return this.color;
+        }
+
+        setwidth(width) {
+            this.width = width
+        }
+
+        setheight(height) {
+            this.height = height
+        }
+
+        setx(x) {
+            this.x = x;
+        }
+
+        sety(y) {
+            this.y = y;
+        }
+
+        setcolor(color) {
+            this.color = color
+        }
+
+        show() {
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.moveTo(this.getx(), this.gety());
+            ctx.lineTo(this.getwidth(), 0);
+            ctx.lineTo(this.getwidth(), this.getheight());
+            ctx.lineTo(0, this.getheight());
+            ctx.lineTo(0, 0);
+            ctx.strokeStyle = this.getcolor();
+            ctx.stroke();
+        }
+    }
+
+    let abcd = new Rectangle(0, 0, 200, 100, '#FF0000');
+    abcd.show()
+
+</script>
+</html>

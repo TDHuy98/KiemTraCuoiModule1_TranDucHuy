@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>InsertNumberToArray</title>
+</head>
+<body>
+
+</body>
+<script>
+    let array = [12, 13, 5, 17, 8];
+    let x = prompt('Nhập vào x: ');
+    let index = prompt('Nhập vào index: ');
+
+    function insertNumberToArray(x, index) {
+        if (index < 0 || index > array.length) {
+            console.log(array);
+        } else {
+            array[index] = x;
+            console.log(array)
+        }
+    }
+    insertNumberToArray(x,index);
+</script>
+</html>
